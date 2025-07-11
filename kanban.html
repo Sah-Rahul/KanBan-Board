@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KanBan Board</title>
+    <link rel="stylesheet" href="KanBan.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="column" id="todo">
+        <div class="priority">
+          <h2>To Do (<span id="todo-count">0</span>)</h2>
+          <select id="todo-priority">
+            <option value="low">🟢 Low</option>
+            <option value="medium">🟡 Medium</option>
+            <option value="high">🔴 High</option>
+          </select>
+        </div>
+        <div class="tasks" id="todo-tasks"></div>
+        <input type="text" id="todo-input" placeholder="Add a task" />
+        <button onclick="addTask('todo')">Add Task</button>
+      </div>
+
+      <div class="column" id="doing">
+        <div class="priority">
+          <h2>Doing (<span id="doing-count">0</span>)</h2>
+          <select id="doing-priority">
+            <option value="low">🟢 Low</option>
+            <option value="medium">🟡 Medium</option>
+            <option value="high">🔴 High</option>
+          </select>
+        </div>
+        <div class="tasks" id="doing-tasks"></div>
+        <input type="text" id="doing-input" placeholder="Add a task" />
+        <button onclick="addTask('doing')">Add Task</button>
+      </div>
+
+      <div class="column" id="done">
+        <div class="priority">
+          <h2>Done (<span id="done-count">0</span>)</h2>
+          <select id="done-priority">
+            <option value="low">🟢 Low</option>
+            <option value="medium">🟡 Medium</option>
+            <option value="high">🔴 High</option>
+          </select>
+        </div>
+        <div class="tasks" id="done-tasks"></div>
+        <input type="text" id="done-input" placeholder="Add a task" />
+        <button onclick="addTask('done')">Add Task</button>
+      </div>
+    </div>
+
+    <!-- Edit/Delete context menu -->
+    <div class="edit">
+      <ul>
+        <li onclick="editTask()">Edit</li>
+        <li onclick="deleteTask()">Delete</li>
+      </ul>
+    </div>
+
+    <script src="KanBan.js"></script>
+  </body>
+</html>
