@@ -25,7 +25,7 @@ function addTask(columnId) {
 function createTaskElement(taskText, Taskdate, priority = "low") {
   const taskElement = document.createElement("div");
   taskElement.innerHTML = `<span>${taskText}</span></br><small class="date">${Taskdate}</small>`;
-  taskElement.classList.add("text", priority); // priority class add karo
+  taskElement.classList.add("text", priority); 
   taskElement.draggable = true;
 
   taskElement.addEventListener("dragstart", dragStrat);
